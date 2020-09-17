@@ -1,11 +1,11 @@
 class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   set :views, Proc.new { File.join(root, "../views/") }
-  binding.pry
   configure do
     enable :sessions
     set :session_secret, "secret"
   end
+  binding.pry
 
   get '/' do
     erb :home
